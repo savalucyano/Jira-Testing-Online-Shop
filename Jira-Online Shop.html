@@ -1,0 +1,1170 @@
+<html
+        xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<title>Jira</title>
+<style type="text/css">
+table {
+    mso-displayed-decimal-separator:"\.";
+    mso-displayed-thousand-separator:"\,";
+}
+body
+{
+    margin: 0px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color:black;
+}
+
+</style>
+<META HTTP-EQUIV="Content-Type" Content="application/vnd.ms-excel; charset=UTF-8">
+<!-- JRA-7598 - ensure fields (e.g. description) occupy only one cell - even fields containing newlines. -->
+<!--
+Vertical align all cells to the top, in order to align all issue rows of issuetable to the top,
+since Excel does not use or save the css files it is hardcoded here.
+-->
+<style>
+@page
+{
+mso-page-orientation:landscape;
+margin:.25in .25in .5in .25in;
+mso-header-margin:.5in;
+mso-footer-margin:.25in;
+mso-footer-data:"&R&P of &N";
+mso-horizontal-page-align:center;
+mso-vertical-page-align:center;
+}
+
+td.issuekey,
+td.issuetype,
+td.status {
+    mso-style-parent: "";
+    mso-number-format: \@;
+    text-align: left;
+}
+br
+{
+    mso-data-placement:same-cell;
+}
+
+td
+{
+    vertical-align: top;
+}
+</style>
+
+<!--[if gte mso 9]><xml>
+<x:ExcelWorkbook>
+<x:ExcelWorksheets>
+<x:ExcelWorksheet>
+<x:Name>general_report</x:Name>
+<x:WorksheetOptions>
+<x:Print>
+<x:ValidPrinterInfo/>
+</x:Print>
+</x:WorksheetOptions>
+</x:ExcelWorksheet>
+</x:ExcelWorksheets>
+</x:ExcelWorkbook>
+</xml><![endif]-->
+</head>
+<body>
+
+<table border="1">
+    <tr bgcolor="#205081" height="30">
+        <td colspan="45">
+            <img src="https://savalucyano.atlassian.net/images/icon-jira-family-logo.png" width="57" height="30" border="0" alt="Jira">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="45">
+            <a href="https://savalucyano.atlassian.net/issues/?jql=project+%3D+QA+ORDER+BY+created+DESC">Jira</a>
+        </td>
+    </tr>
+    <tr>
+                <td colspan="45">
+            Displaying <strong>11</strong> issues at <strong>23/Jun/26 3:04 PM</strong>.
+        </td>
+    </tr>
+</table>
+
+
+
+
+                                        <table id="issuetable" class="aui " border="1" cellpadding="3" cellspacing="1" width="100%">
+                        <thead>
+        <tr class="rowHeader">
+            
+                                                            <th class="colHeaderLink headerrow-statuscategorychangedate" data-id="statuscategorychangedate">
+                                                        Status Category Changed
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuetype" data-id="issuetype">
+                                                        Issue Type
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuekey" data-id="issuekey">
+                                                        Key
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timespent" data-id="timespent">
+                                                        Time Spent
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timeoriginalestimate" data-id="timeoriginalestimate">
+                                                        Original estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-project" data-id="project">
+                                                        Project
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-description" data-id="description">
+                                                        Description
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-fixVersions" data-id="fixVersions">
+                                                        Fix versions
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-statusCategory" data-id="statusCategory">
+                                                        Status Category
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimespent" data-id="aggregatetimespent">
+                                                        Σ Time Spent
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-parent" data-id="parent">
+                                                        Parent
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-resolution" data-id="resolution">
+                                                        Resolution
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10015" data-id="customfield_10015">
+                                                        Start date
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-security" data-id="security">
+                                                        Security Level
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimeestimate" data-id="aggregatetimeestimate">
+                                                        Σ Remaining Estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-resolutiondate" data-id="resolutiondate">
+                                                        Resolved
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-workratio" data-id="workratio">
+                                                        Work Ratio
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-summary" data-id="summary">
+                                                        Summary
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-watches" data-id="watches">
+                                                        Watchers
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-lastViewed" data-id="lastViewed">
+                                                        Last Viewed
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-thumbnail" data-id="thumbnail">
+                                                        Images
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-creator" data-id="creator">
+                                                        Creator
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-subtasks" data-id="subtasks">
+                                                        Sub-tasks
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-created" data-id="created">
+                                                        Created
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10020" data-id="customfield_10020">
+                                                        Sprint
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10021" data-id="customfield_10021">
+                                                        Flagged
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-reporter" data-id="reporter">
+                                                        Reporter
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10000" data-id="customfield_10000">
+                                                        Development
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregateprogress" data-id="aggregateprogress">
+                                                        Σ Progress
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-priority" data-id="priority">
+                                                        Priority
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10001" data-id="customfield_10001">
+                                                        Team
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-labels" data-id="labels">
+                                                        Labels
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10016" data-id="customfield_10016">
+                                                        Story point estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10017" data-id="customfield_10017">
+                                                        Issue color
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-environment" data-id="environment">
+                                                        Environment
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10019" data-id="customfield_10019">
+                                                        Rank
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimeoriginalestimate" data-id="aggregatetimeoriginalestimate">
+                                                        Σ Original Estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timeestimate" data-id="timeestimate">
+                                                        Remaining Estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-duedate" data-id="duedate">
+                                                        Due date
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-progress" data-id="progress">
+                                                        Progress
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuelinks" data-id="issuelinks">
+                                                        Linked Issues
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-votes" data-id="votes">
+                                                        Votes
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-assignee" data-id="assignee">
+                                                        Assignee
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-updated" data-id="updated">
+                                                        Updated
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-status" data-id="status">
+                                                        Status
+                                                    </th>
+                                                                    </tr>
+    </thead>
+    <tbody>
+                    
+
+                <tr id="issuerow10010" rel="10010" data-issuekey="QA-11" class="issuerow">
+                                            <td class="statuscategorychangedate"> 23/Jun/26 12:38 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QA-11" href="https://savalucyano.atlassian.net/browse/QA-11">QA-11</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA Web Testing-Online Shop
+</td>
+                                            <td class="description">            *Priority:* P1 - Critical<br/>
+<br/>
+*Description:*<br/>
+<br/>
+Users are unable to complete the checkout process.<br/>
+<br/>
+*Steps to Reproduce:*<br/>
+<br/>
+# Add a product to cart.<br/>
+# Open the cart.<br/>
+# Click Checkout.<br/>
+# Complete the payment details.<br/>
+# Click Place Order.<br/>
+<br/>
+*Expected Result:*<br/>
+<br/>
+Order is placed successfully and a confirmation page is displayed.<br/>
+<br/>
+*Actual Result:*<br/>
+<br/>
+Checkout process fails and the order is not created.
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="parent">            Online Shop-QA Testing
+    </td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Checkout isn&#39;t working
+    </p>
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 23/Jun/26 1:10 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Lucyano 
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 23/Jun/26 12:38 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Lucyano 
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i00027:
+  </td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 23/Jun/26 1:12 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10009" rel="10009" data-issuekey="QA-10" class="issuerow">
+                                            <td class="statuscategorychangedate"> 23/Jun/26 12:37 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QA-10" href="https://savalucyano.atlassian.net/browse/QA-10">QA-10</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA Web Testing-Online Shop
+</td>
+                                            <td class="description">            *Priority:* P2 - High<br/>
+<br/>
+*Description:*<br/>
+<br/>
+The application allows users to log in using incorrect passwords.<br/>
+<br/>
+*Steps to Reproduce:*<br/>
+<br/>
+# Open Login page.<br/>
+# Enter a valid username.<br/>
+# Enter an incorrect password.<br/>
+# Click Login.<br/>
+<br/>
+*Expected Result:*<br/>
+<br/>
+User should not be logged in and an error message should be displayed.<br/>
+<br/>
+*Actual Result:*<br/>
+<br/>
+User is logged in successfully despite using an incorrect password.
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="parent">            Online Shop-QA Testing
+    </td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Login accepts wrong passwords
+    </p>
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 23/Jun/26 1:08 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Lucyano 
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 23/Jun/26 12:37 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Lucyano 
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0001z:
+  </td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 23/Jun/26 1:10 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10008" rel="10008" data-issuekey="QA-9" class="issuerow">
+                                            <td class="statuscategorychangedate"> 23/Jun/26 12:33 PM </td>
+                                            <td class="issuetype">    Task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QA-9" href="https://savalucyano.atlassian.net/browse/QA-9">QA-9</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA Web Testing-Online Shop
+</td>
+                                            <td class="description">            *Description:*<br/>
+<br/>
+Verify that users can reset their password successfully.<br/>
+<br/>
+*Steps:*<br/>
+<br/>
+# Open Login page.<br/>
+# Click “Forgot Password”.<br/>
+# Enter email address.<br/>
+# Submit request.<br/>
+<br/>
+*Expected Result:*<br/>
+<br/>
+Password reset instructions are sent to the user’s email.
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="parent">            Online Shop-QA Testing
+    </td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Test reset password
+    </p>
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 23/Jun/26 2:03 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Lucyano 
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 23/Jun/26 12:33 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Lucyano 
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0001r:
+  </td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 23/Jun/26 1:08 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10007" rel="10007" data-issuekey="QA-8" class="issuerow">
+                                            <td class="statuscategorychangedate"> 23/Jun/26 12:32 PM </td>
+                                            <td class="issuetype">    Task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QA-8" href="https://savalucyano.atlassian.net/browse/QA-8">QA-8</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA Web Testing-Online Shop
+</td>
+                                            <td class="description">            *Description:*<br/>
+<br/>
+Verify that users cannot log in using invalid credentials.<br/>
+<br/>
+*Steps:*<br/>
+<br/>
+# Open Login page.<br/>
+# Enter invalid username or password.<br/>
+# Click Login.<br/>
+<br/>
+*Expected Result:*<br/>
+<br/>
+Login is rejected and an error message is displayed.
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="parent">            Online Shop-QA Testing
+    </td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Test login invalid
+    </p>
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 23/Jun/26 1:04 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Lucyano 
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 23/Jun/26 12:32 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Lucyano 
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0001j:
+  </td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 23/Jun/26 1:05 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10006" rel="10006" data-issuekey="QA-7" class="issuerow">
+                                            <td class="statuscategorychangedate"> 23/Jun/26 12:31 PM </td>
+                                            <td class="issuetype">    Task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QA-7" href="https://savalucyano.atlassian.net/browse/QA-7">QA-7</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA Web Testing-Online Shop
+</td>
+                                            <td class="description">            *Description:*<br/>
+<br/>
+Verify that users can log in successfully using valid credentials.<br/>
+<br/>
+*Steps:*<br/>
+<br/>
+# Open Login page.<br/>
+# Enter valid username and password.<br/>
+# Click Login.<br/>
+<br/>
+*Expected Result:*<br/>
+<br/>
+User is logged in and redirected to the account page.
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="parent">            Online Shop-QA Testing
+    </td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Test login valid
+    </p>
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 23/Jun/26 1:47 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Lucyano 
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 23/Jun/26 12:31 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Lucyano 
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0001b:
+  </td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 23/Jun/26 1:04 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10005" rel="10005" data-issuekey="QA-6" class="issuerow">
+                                            <td class="statuscategorychangedate"> 23/Jun/26 12:30 PM </td>
+                                            <td class="issuetype">    Story
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QA-6" href="https://savalucyano.atlassian.net/browse/QA-6">QA-6</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA Web Testing-Online Shop
+</td>
+                                            <td class="description">            As a user, i want to view my previous orders so that i can track my purchases.
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="parent">            Online Shop-QA Testing
+    </td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Order history
+    </p>
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 23/Jun/26 1:02 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Lucyano 
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 23/Jun/26 12:30 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Lucyano 
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i00013:
+  </td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 23/Jun/26 1:02 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10004" rel="10004" data-issuekey="QA-5" class="issuerow">
+                                            <td class="statuscategorychangedate"> 23/Jun/26 12:30 PM </td>
+                                            <td class="issuetype">    Story
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QA-5" href="https://savalucyano.atlassian.net/browse/QA-5">QA-5</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA Web Testing-Online Shop
+</td>
+                                            <td class="description">            As a user, i want to complete the checkout process and place an order successfully.
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="parent">            Online Shop-QA Testing
+    </td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Checkout
+    </p>
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 23/Jun/26 12:58 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Lucyano 
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 23/Jun/26 12:30 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Lucyano 
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0000v:
+  </td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 23/Jun/26 12:59 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10003" rel="10003" data-issuekey="QA-4" class="issuerow">
+                                            <td class="statuscategorychangedate"> 23/Jun/26 12:29 PM </td>
+                                            <td class="issuetype">    Story
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QA-4" href="https://savalucyano.atlassian.net/browse/QA-4">QA-4</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA Web Testing-Online Shop
+</td>
+                                            <td class="description">            As a user, i want to add products to my shopping cart so that i can purchase them later.
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="parent">            Online Shop-QA Testing
+    </td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Add to card
+    </p>
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 23/Jun/26 12:57 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Lucyano 
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 23/Jun/26 12:29 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Lucyano 
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0000n:
+  </td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 23/Jun/26 12:58 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10002" rel="10002" data-issuekey="QA-3" class="issuerow">
+                                            <td class="statuscategorychangedate"> 23/Jun/26 12:28 PM </td>
+                                            <td class="issuetype">    Story
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QA-3" href="https://savalucyano.atlassian.net/browse/QA-3">QA-3</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA Web Testing-Online Shop
+</td>
+                                            <td class="description">            As a registered user, i want to log into my account so that i can access my profile and orders.
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="parent">            Online Shop-QA Testing
+    </td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Login
+    </p>
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 23/Jun/26 12:56 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Lucyano 
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 23/Jun/26 12:28 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Lucyano 
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0000f:
+  </td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 23/Jun/26 12:57 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10001" rel="10001" data-issuekey="QA-2" class="issuerow">
+                                            <td class="statuscategorychangedate"> 23/Jun/26 11:31 AM </td>
+                                            <td class="issuetype">    Story
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QA-2" href="https://savalucyano.atlassian.net/browse/QA-2">QA-2</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA Web Testing-Online Shop
+</td>
+                                            <td class="description">            As a new user, i want to create an account so that i can access the online shop and make purchases.
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="parent">            Online Shop-QA Testing
+    </td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Sign up
+    </p>
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 23/Jun/26 12:51 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Lucyano 
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 23/Jun/26 11:31 AM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Lucyano 
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i00007:
+  </td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 23/Jun/26 12:55 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10000" rel="10000" data-issuekey="QA-1" class="issuerow">
+                                            <td class="statuscategorychangedate"> 23/Jun/26 11:24 AM </td>
+                                            <td class="issuetype">    Epic
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QA-1" href="https://savalucyano.atlassian.net/browse/QA-1">QA-1</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA Web Testing-Online Shop
+</td>
+                                            <td class="description">            This epic covers the QA testing process for an online shopping application. The goal is to test main functionalities such as user registration, login, product browsing, cart management, and checkout process. The focus is on identifying bugs and ensuring a smooth user experience.
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Online Shop-QA Testing
+    </p>
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 23/Jun/26 3:03 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Lucyano 
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 23/Jun/26 11:24 AM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Lucyano 
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017">      dark_yellow
+  </td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|hzzzzz:
+  </td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="timeestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 23/Jun/26 11:24 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+        </tbody>
+    </table>
+    <div class="end-of-stable-message"></div>
+            <table border="1" >
+<tr>
+    <td bgcolor="#dddddd" colspan="45"><font size="1">
+        Generated at Tue Jun 23 13:04:24 UTC 2026 by Lucyano  using Jira 1001.0.0-SNAPSHOT#100292-rev:fe820ceeea1b628a3b72e99c1b625dbf60c85dbe.
+    </font></td>
+</tr>
+</table>
+
+</body>
+</html>
